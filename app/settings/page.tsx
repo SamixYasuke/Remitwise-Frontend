@@ -15,6 +15,9 @@ import {
   FileText,
   Lock,
   Clock,
+  ExternalLink,
+  Mail,
+  ChevronRight,
 } from "lucide-react";
 import SettingsSection from "@/components/SettingsSection";
 import SettingsItem from "@/components/SettingsItem";
@@ -144,30 +147,111 @@ export default function SettingsPage() {
           />
         </SettingsSection>
 
-        {/* About Section */}
-        <SettingsSection title="About">
-          <SettingsItem
-            icon={<Info className="w-5 h-5" />}
-            title="App Version"
-            type="text"
-            value="v1.0.4-alpha"
-          />
-          <SettingsItem
-            icon={<FileText className="w-5 h-5" />}
-            title="Terms of Service"
-            type="navigation"
-          />
-          <SettingsItem
-            icon={<ShieldCheck className="w-5 h-5" />}
-            title="Privacy Policy"
-            type="navigation"
-          />
-          <SettingsItem
-            icon={<MessageSquare className="w-5 h-5" />}
-            title="Support"
-            type="navigation"
-          />
-        </SettingsSection>
+        {/* About Section (redesigned) */}
+        <div className="mb-8">
+          <div className="px-4 mb-3 flex items-center space-x-3">
+            <div className="w-10 h-10 rounded-full bg-red-500/10 flex items-center justify-center">
+              <Info className="w-5 h-5 text-red-500" />
+            </div>
+            <div>
+              <h2 className="text-base font-semibold text-gray-900">
+                About
+              </h2>
+              <p className="text-sm text-gray-500">
+                App information and support
+              </p>
+            </div>
+          </div>
+
+          <div className="mx-4 rounded-2xl overflow-hidden border border-gray-800 bg-gray-900">
+            <div className="divide-y divide-gray-800">
+              <div className="flex items-center justify-between p-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-11 h-11 rounded-lg bg-gray-800 flex items-center justify-center text-gray-200">
+                    <Info className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">
+                      App Version
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      Current version: 1.0.0
+                    </span>
+                  </div>
+                </div>
+                <div className="text-sm text-gray-400">v1.0.0</div>
+              </div>
+
+              <div className="flex items-center justify-between p-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-11 h-11 rounded-lg bg-gray-800 flex items-center justify-center text-gray-200">
+                    <FileText className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">
+                      Terms of Service
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      Read our terms and conditions
+                    </span>
+                  </div>
+                </div>
+                <ExternalLink className="w-5 h-5 text-gray-400" />
+              </div>
+
+              <div className="flex items-center justify-between p-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-11 h-11 rounded-lg bg-gray-800 flex items-center justify-center text-gray-200">
+                    <ShieldCheck className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">
+                      Privacy Policy
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      How we protect your data
+                    </span>
+                  </div>
+                </div>
+                <ExternalLink className="w-5 h-5 text-gray-400" />
+              </div>
+
+              <div className="flex items-center justify-between p-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-11 h-11 rounded-lg bg-gray-800 flex items-center justify-center text-gray-200">
+                    <MessageSquare className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">
+                      Help & Support
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      Get help with your account
+                    </span>
+                  </div>
+                </div>
+                <ChevronRight className="w-5 h-5 text-gray-400" />
+              </div>
+
+              <div className="flex items-center justify-between p-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-11 h-11 rounded-lg bg-gray-800 flex items-center justify-center text-gray-200">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-medium text-white">
+                      Contact Us
+                    </span>
+                    <span className="text-xs text-gray-400">
+                      support@remitwise.com
+                    </span>
+                  </div>
+                </div>
+                <ExternalLink className="w-5 h-5 text-gray-400" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
   );
